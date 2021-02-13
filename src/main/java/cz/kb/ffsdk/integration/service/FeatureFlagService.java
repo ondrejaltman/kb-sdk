@@ -119,8 +119,12 @@ public class FeatureFlagService {
             }
 
             if (!Arrays.equals(checksumDTO.getChecksum(), configurationDTO.getChecksum())) {
-                configurationDTO.setChecksum(checksumDTO.getChecksum());
-                featureFlagCachedMap.put(configurationDTO.getName(), configurationDTO);
+                ConfigurationDTO newConf = FeatureFlagIntegrationService.getConfiguration(configurationDTO.getName());
+
+                if (newConf != null) {
+                    newConf.setChecksum(checksumDTO.getChecksum());
+                    featureFlagCachedMap.put(configurationDTO.getName(), newConf);
+                }
             }
         }
     }

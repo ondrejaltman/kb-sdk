@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContextInDTO {
+public class ContextDemoInDTO {
     private String ff;
     private String environment;
     private String username;
