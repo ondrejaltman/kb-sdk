@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/form}" th:object="${contextDTO}" method="post">
+    <h1>DEMO Context form</h1>
+    <div>
+        <label for="inputEnv">Feature name</label>
+        <input type="text" class="form-control" th:field="*{ff}" id="inputEnv">
+
+        <label for="inputEnv">Environment</label>
+        <input type="text" class="form-control" th:field="*{environment}" id="inputEnv">
+
+        <label for="inputIP">IP</label>
+        <input type="text" class="form-control" th:field="*{ip}" id="inputIP">
+
+        <label for="inputUsername">Username</label>
+        <input type="text" class="form-control" th:field="*{username}" id="inputUsername">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Test</button>
+</form>
+
+<div>
+    Request duration: <span th:text="${duration}"></span>
+</div>
+<div>
+    Request result: <span th:text="${result}"></span>
+</div>
+
+</body>
+</html>
